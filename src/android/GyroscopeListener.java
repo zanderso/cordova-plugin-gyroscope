@@ -240,13 +240,19 @@ public class GyroscopeListener extends CordovaPlugin implements SensorEventListe
             this.stop();
         }
     }
-
     @Override
-    public void onResume() {
+    public void onResume(boolean multitasking) {
         if (this.status == GyroscopeListener.STOPPED) {
             this.start();
         }
     }
+    @Override
+    public void onPause(boolean multitasking) {
+        if (this.status == GyroscopeListener.RUNNING) {
+            this.stop();
+        }
+    }
+
 
     // Sends an error back to JS
     private void fail(int code, String message) {
