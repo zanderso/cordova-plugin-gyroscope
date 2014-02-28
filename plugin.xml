@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.dartlang.phonegap.gyroscope"
+      version="0.0.2">
+	
+    <name>Device Gyroscope</name>
+    <description>Cordova Device Gyroscope Plugin</description>
+    <license>LICENSE</license>
+    <keywords>cordova,device,gyroscope</keywords>
+    <repo>https://github.com/zanderso/cordova-plugin-gyroscope</repo>
+    <issue></issue>
+
+    <js-module src="www/AngularSpeed.js" name="AngularSpeed">
+        <clobbers target="AngularSpeed" />
+    </js-module>
+    
+    <js-module src="www/gyroscope.js" name="gyroscope">
+        <clobbers target="navigator.gyroscope" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+	    
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Gyroscope">
+                <param name="android-package" value="org.dartlang.phonegap.gyroscope.GyroscopeListener"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/GyroscopeListener.java" target-dir="src/org/dartlang/phonegap/gyroscope" />
+    
+    </platform>
+</plugin>

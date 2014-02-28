@@ -1,0 +1,15 @@
+{
+    "version": "0.0.1",
+    "name": "org.dartlang.phonegap.gyroscope",
+    "cordova_name": "Device Gyroscope",
+    "description": "Cordova Device Gyroscope Plugin",
+    "license": "LICENSE",
+    "repo": "https://github.com/zanderso/cordova-plugin-gyroscope",
+    "issue": "",
+    "keywords": [
+        "cordova",
+        "device",
+        "gyroscope"
+    ],
+    "engines": []
+}
